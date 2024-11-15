@@ -1,0 +1,16 @@
+.ProjectCardComponent {
+    border-width: 2px;
+    max-width: 600px;
+    transition: all 0.5s;
+}
+
+.ProjectCardComponent:hover {
+    border-radius: 20px;
+    border-color: #ff0000;
+    cursor: pointer;
+}
+
+.openLinkBtn:hover {
+    /* color: orangered;     */
+    transform: scale(1.1);
+}

@@ -1,0 +1,148 @@
+
+* {
+    font-family: "Quicksand";
+}
+
+.roundedBorders {
+    border-radius: 1rem;
+}
+
+.blogCard {
+  transition: box-shadow 0.7s;
+} .blogCard:hover {
+  box-shadow: 1px 2px 3px orangered, -1px -2px 3px orangered;
+  cursor: pointer;
+  border-width: 0px;
+}
+
+.blogCardImg {
+  height: 100px;
+  width: 100px;
+  transition: all 0.5s;
+} .blogCardImg:hover{
+  -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.blogTitle {
+    font-size: 1.7em;
+  transition: all 0.2s;
+} .blogTitle:hover {
+  cursor: pointer;
+  color: #551A8B;
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.shareButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(255, 174, 160, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .shareButton:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(241, 65, 65);
+    align-items: center;
+  }
+  
+  .shareButton:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-300%);
+  }
+  
+  .shareButton::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Share";
+    color: white;
+    transition-duration: .3s;
+    font-size: 0px;
+  }
+  
+  .shareButton:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.3s;
+  }
+  .shareButton :active {
+    transform: scale(0.7);
+  }
+  
+  .dropDownBtn {
+    color: orange;
+    border-width: 1.5px;
+    border-color: orange;
+    background-color: white;
+    /* transition: all 0.5s; */
+  } .dropDownBtn:hover {
+    color: orange;
+    transform: scale(1.08);
+    border-color: darkorange;
+  }
+
+  .blogCardImg1 {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto 795 / 400;
+    object-fit: cover;
+  }
+
+  .Readbutton {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   .Readbutton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   .Readbutton:hover {
+    color: #e8e8e8;
+   }
+   
+   .Readbutton:hover::before {
+    width: 100%;
+   }

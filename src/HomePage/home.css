@@ -1,0 +1,272 @@
+.text-darkorange {
+    color: #ff8c00;
+}
+
+.fst-italic {
+    font-style: italic;
+}
+
+.project-card {
+    position: relative;
+    width: 190px;
+    height: 210px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    ;
+  }
+
+  .project-card:hover{
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #ff0000;
+    cursor: pointer;
+  }
+  
+  .bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 190px;
+    height: 240px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+  }
+  
+  .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+  }
+  
+.content{
+  z-index: 3;
+  position: absolute;
+}
+
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+  
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  }
+
+  .exploreButton {
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--clr);
+    color: #fff;
+    border-radius: 10rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+  }
+  
+  .button__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    color: var(--clr);
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  
+  .exploreButton:hover {
+    background-color: #000;
+  }
+  
+  .exploreButton:hover .button__icon-wrapper {
+    color: #000;
+  }
+  
+  .button__icon-svg--copy {
+    position: absolute;
+    transform: translate(-150%, 150%);
+  }
+  
+  .exploreButton:hover .button__icon-svg:first-child {
+    transition: transform 0.3s ease-in-out;
+    transform: translate(150%, -150%);
+  }
+  
+  .exploreButton:hover .button__icon-svg--copy {
+    transition: transform 0.3s ease-in-out 0.1s;
+    transform: translate(0);
+  }
+  
+
+.discordButton {
+  color: white;
+  background-color: #5865F2;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.discordButton:hover {
+  color: #5865F2;
+  background-color: white;
+  border-color: #5865F2;
+}
+
+
+/* From Uiverse.io by bhaveshxrawat */ 
+.discordCard {
+  width: 360px;
+  height: 510px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.discordCard::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.discordCard::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  inset: 5px;
+  border-radius: 15px;
+}  
+
+.imageYT {
+  width:100px !important;
+  height:100px !important;
+  /* background-color: #07182E; */
+}
+
+
+
+.Subscribebutton {
+  position: relative;
+  width: 130px;
+  height: 34px;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px #cc2127 solid;
+  overflow: hidden;
+}
+
+.text1 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 22%;
+}
+
+.text2 {
+  position: absolute;
+  top: 25%;
+  left: -50px;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s;
+}
+
+.icon::before {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  z-index: -1;
+  content: '';
+  width: 130px;
+  height: 33px;
+  border-radius: 30px;
+  background-color: #cc2127;
+}
+
+.Subscribebutton:hover .icon {
+  transform: translateX(96px);
+  transition: transform 0.5s;
+}
+
+.Subscribebutton:hover .text2 {
+  transform: translateX(100px);
+  transition: transform 0.6s;
+}
+
+.Subscribebutton:active {
+  transform: scale(1.03);
+}
+
+.ytCard {
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 25px;
+  border-width: 2px;
+}
+
+.ytCard:hover {
+  border-color: red;
+}

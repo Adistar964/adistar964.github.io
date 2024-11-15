@@ -1,0 +1,73 @@
+.gradient-line {
+    width: 100%;
+    height: 3px;
+    position: relative;
+  }
+  
+  .gradient-line:before, .gradient-line:after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+          #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: 100%;
+    height: calc(100% + 0.5px);
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .gradient-line:after {
+    filter: blur(50px);
+  }
+
+  .anchor {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid #ff0000;
+    padding: 14px 40px 13px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .anchor:hover {
+    color: #4e484a;
+  }
+  
+  .CVButton a::before {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    background-color: #ff0000;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    height: 111%;
+    transition: all .3s ease;
+  }
+  
+  .CVButton a:hover::before {
+    height: 11%;
+  }
+  
+  .CVButton span {
+    position: relative;
+    z-index: 2;
+    transition: all .3s ease;
+  }
