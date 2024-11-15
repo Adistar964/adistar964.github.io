@@ -23,7 +23,7 @@ const myRouter = createBrowserRouter([
   {path:"/blogs", element: <BlogListPage />},
   {path:"/blogs/:blogID", element: <BlogPage />},
   {path:"/projects/:projectsCategory", element: <ProjectsPage />},
-])
+], {basename:import.meta.env.BASE_URL})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
