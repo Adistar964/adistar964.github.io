@@ -51,7 +51,7 @@ export default function BlogListPage(){
                 const blogsFromBackend = data.blogs;
                 setBlogs(blogsFromBackend)
             }else if(data.code=="error"){
-                window.open("https://abdullah.is-a.dev/") // any error, then we send user back to home page
+                window.open("https://abdullah.is-a.dev/#/") // any error, then we send user back to home page
             }
             setLoading(false)
         }).catch(err => console.log(err))
@@ -125,7 +125,7 @@ function BlogCard(props){
                 <button onClick={()=>navigate(`/blogs/${props._id}`)} 
                 className="Readbutton card-link blogPageTitle" style={{fontSize:"16px"}}>READ THIS</button>
                 <button className="shareButton" 
-                onClick={()=>navigator.share({title:"Abdullah's Blog-Post",url:`https://abdullah.is-a.dev/blogs/${props._id}`})}>
+                onClick={()=>navigator.share({title:"Abdullah's Blog-Post",url:`https://abdullah.is-a.dev/#/blogs/${props._id}`})}>
                     <FaShareNodes size={12} color="white" className="svgIcon"/>
                 </button>
             </div>
