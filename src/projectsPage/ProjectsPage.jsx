@@ -19,37 +19,37 @@ const sampleProjects = [
     description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
     imageFileName:"samplePic.jpg", // this is there in our public folder 
     tags:["Python","Dart","JavaScript","React","Flutter","MongoDB","Firebase","Stripe"],
-    link: "http://localhost:5173/about/"},
+    link: "http://localhost:5173"},
     {title:"Block Game",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","Dart","JavaScript"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     {title:"Code Runner",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","pyautogui"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     {title:"Ecommerce",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","Dart","JavaScript","somehing","consder","API"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     {title:"LT installer",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","Dart","JavaScript","somehing","consder","API"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     {title:"Something project",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","Dart"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     {title:"Something project 2",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sequi sapiente alias modi provident vel mollitia optio commodi ab totam eum ea rerum possimus voluptate corporis culpa, reprehenderit repudiandae quos.",
         imageFileName:"samplePic.jpg", // this is there in our public folder 
         tags:["Python","Dart"],
-        link: "http://localhost:5173/about/"},
+        link: "http://localhost:5173"},
     ]
 
 export default function ProjectsPage(){
@@ -83,12 +83,12 @@ export default function ProjectsPage(){
                 setProjects(projectsFromBackend)
                 setLoading(false)
                 if(data.projects.length === 0){
-                    window.location.href="http://localhost:5173"
+                    window.location.href="https://abdullah.is-a.dev"
                 }
             }else{
-                window.location.href="http://localhost:5173"
+                window.location.href="https://abdullah.is-a.dev"
             }
-        }).catch(err => {console.log(err);window.location.href="http://localhost:5173"})
+        }).catch(err => {console.log(err);window.location.href="https://abdullah.is-a.dev"})
 
     }, [projectsCategory])
 
