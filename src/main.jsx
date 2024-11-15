@@ -17,6 +17,8 @@ import ProjectsPage from './projectsPage/ProjectsPage';
 
 // typing animation!!!
 
+// we r not using createBrowserRouter as it doesnt work good with github-pages
+// instead we use createHashRouter
 const myRouter = createHashRouter([
   {path:"/", element: <HomePage />, errorElement: <ErrorPage />},
   {path:"/about", element: <AboutPage />},
@@ -34,4 +36,5 @@ createRoot(document.getElementById('root')).render(
 
 
 // defining some standard variables:
-export const backend_url = "http://localhost:8000/api"
+// export const backend_url = "http://localhost:8000/api"
+export const backend_url = "https://personal-site-latest-backend.vercel.app/api"
