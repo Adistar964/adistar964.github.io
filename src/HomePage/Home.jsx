@@ -11,6 +11,7 @@ import Footer from "../Footer/Footer"
 
 import { FaGlobe, FaBrain } from "react-icons/fa6";
 import { MdDevices, MdFolderCopy } from "react-icons/md";
+import { useMediaQuery } from "react-responsive";
 
 const projectCategories = [
     {title: "Web Apps", icon:FaGlobe},
@@ -23,6 +24,10 @@ export default function HomePage (){
 
     const [subCount, setSubCount] = useState("")
     
+    const isMobileorTablet = useMediaQuery({
+        maxWidth:1224
+    })
+
     useEffect(() => {
         const api_key = "AIzaSyDHcJQTD_dFARr-YT7EL6KZr47J_bVTBns"
         const channel_id = "UCCQIkozPw9yhyOpI05Iye9w"
@@ -46,14 +51,14 @@ export default function HomePage (){
             <div className="mb-5">
                 <ExploreProjects />
                 <br /><br /><br />
-                <div className="mx-5">
-                    <div className="d-flex justify-content-between mt-5 flex-wrap">
+                <div className={isMobileorTablet ? "mx-3" : "mx-5"}>
+                    <div className="d-flex justify-content-between mt-5 flex-wrap gap-4">
                         <div style={{maxWidth:"600px"}}>
                             <h4 className="display-5">
                                 Connect with Discord!
                             </h4>
                             <hr style={{width:"100%", marginBottom:"25px"}} className="mt-3" />
-                            <p style={{fontSize:24}}>
+                            <p style={{fontSize:isMobileorTablet ? 16 :24}}>
                                 Join our community on the Discord platform to learn and share knowledge.
                                 You could try hoping in to clear your doubts with fellow enthusiasts.
                                 Joining this channel means upgrading your programming skills!
@@ -99,11 +104,16 @@ export function ExploreProjects(){
 
     const navigate = useNavigate()
 
+    const isMobileorTablet = useMediaQuery({
+        maxWidth:1224
+    })
+
     return(
 <>
-    <div className="d-flex justify-content-around">
-        <div></div> <div></div>
-        <h4 className="display-5">
+    <div className="d-flex justify-content-between mx-2 align-items-center">
+        {!isMobileorTablet && <><div></div> <div></div></>}
+        <h4 className={isMobileorTablet ? "display-6" :"display-5"}
+        style={isMobileorTablet ? {fontSize:"1.5em"} : {}}>
             Explore My Projects
         </h4>
         <button onClick={() => navigate(`/projects/All Projects`)} 
@@ -120,7 +130,7 @@ export function ExploreProjects(){
         </button>
     </div>
     <hr style={{width:"100%", marginBottom:"25px"}} className="mx-auto mt-3" />
-    <div className="d-flex flex-wrap gap-5 justify-content-around mt-1">
+    <div className="d-flex flex-wrap gap-4 justify-content-around mt-1 mx-2">
         {projectCategories.map(projectCategory => 
         <div className="project-card" onClick={() => navigate(`/projects/${projectCategory.title}`)}>
             <div className="bg" />

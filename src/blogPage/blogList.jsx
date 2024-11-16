@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 import LoadingComponent from "../loading"
-import { backend_url } from "../main";
+import { backend_url, frontend_url } from "../constants";
 
 // sample blogs, not from our db
 export const sampleBlogs = [
@@ -28,6 +28,8 @@ export default function BlogListPage(){
     
     const [searchText, setSearchText] = useState(""); // the input-value from search bar!
     
+    const navigate = useNavigate();
+
     useEffect(() => {
         setLoading(true)
 
@@ -51,7 +53,7 @@ export default function BlogListPage(){
                 const blogsFromBackend = data.blogs;
                 setBlogs(blogsFromBackend)
             }else if(data.code=="error"){
-                window.open("https://abdullah.is-a.dev/#/") // any error, then we send user back to home page
+                navigate("/") // any error, then we send user back to home page
             }
             setLoading(false)
         }).catch(err => console.log(err))
@@ -110,7 +112,7 @@ return (
 function BlogCard(props){
     const navigate = useNavigate()
     return (
-    <div className="card mx-auto my-4" style={{maxWidth:"795px"}}>
+    <div className="card mx-6 my-4" style={{maxWidth:"795px"}}>
         <img decoding="async" src={`/${props.imageFileName}`} width={795} height={400} 
         className="card-img-top blogCardImg1" alt="..." />
         <div className="card-body p-4">
@@ -125,7 +127,7 @@ function BlogCard(props){
                 <button onClick={()=>navigate(`/blogs/${props._id}`)} 
                 className="Readbutton card-link blogPageTitle" style={{fontSize:"16px"}}>READ THIS</button>
                 <button className="shareButton" 
-                onClick={()=>navigator.share({title:"Abdullah's Blog-Post",url:`https://abdullah.is-a.dev/#/blogs/${props._id}`})}>
+                onClick={()=>navigator.share({title:"Abdullah's Blog-Post",url:frontend_url+`/#/blogs/${props._id}`})}>
                     <FaShareNodes size={12} color="white" className="svgIcon"/>
                 </button>
             </div>

@@ -4,11 +4,11 @@
 import Header from "../header/Header"
 import Footer from "../Footer/Footer"
 import LoadingComponent from "../loading"
-import { backend_url } from "../main"
+import { backend_url, frontend_url } from "../constants"
 
 import "./ProjectsPage.css"
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -60,6 +60,8 @@ export default function ProjectsPage(){
 
     const [loading,setLoading] = useState(true)
 
+    const navigate = useNavigate()
+
     useEffect(() => {
 
         setLoading(true)
@@ -83,12 +85,13 @@ export default function ProjectsPage(){
                 setProjects(projectsFromBackend)
                 setLoading(false)
                 if(data.projects.length === 0){
-                    window.location.href="https://abdullah.is-a.dev"
+                    navigate("/")
                 }
             }else{
-                window.location.href="https://abdullah.is-a.dev"
+                setLoading(false)
+                navigate("/")
             }
-        }).catch(err => {console.log(err);window.location.href="https://abdullah.is-a.dev"})
+        }).catch(err => {console.log(err);setLoading(false);navigate("/")})
 
     }, [projectsCategory])
 

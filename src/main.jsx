@@ -25,7 +25,7 @@ const myRouter = createHashRouter([
   {path:"/blogs", element: <BlogListPage />},
   {path:"/blogs/:blogID", element: <BlogPage />},
   {path:"/projects/:projectsCategory", element: <ProjectsPage />},
-], {basename:import.meta.env.BASE_URL})
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -33,8 +33,3 @@ createRoot(document.getElementById('root')).render(
       <ToastContainer /> {/* This is needed for react-toastify to work */}
   </StrictMode>,
 )
-
-
-// defining some standard variables:
-// export const backend_url = "http://localhost:8000/api"
-export const backend_url = "https://personal-site-latest-backend.vercel.app/api"

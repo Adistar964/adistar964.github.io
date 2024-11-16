@@ -3,13 +3,14 @@
 import Header from "../header/Header"
 import Footer from "../Footer/Footer"
 import { RecommendedPosts, sampleBlogs } from "./blogList"
-import { backend_url } from "../main"
+import { backend_url, frontend_url } from "../constants"
 
 import "./blogPage.css"
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoadingComponent from "../loading";
+import { useMediaQuery } from "react-responsive"
 
 export default function blogPage(props){
     
@@ -22,6 +23,11 @@ export default function blogPage(props){
     const [publishedDate,setPublishedDate] = useState(new Date())
 
     const [loading, setLoading] = useState(true)
+
+    const navigate = useNavigate()
+    const isMobileorTablet = useMediaQuery({
+        maxWidth:1224
+    })
 
     useEffect(() => {
         setLoading(true);
@@ -38,7 +44,7 @@ export default function blogPage(props){
                 const datee = new Date(blog.publishedDate)
                 setPublishedDate(datee)
             }else if(data.code=="error"){
-
+                navigate("/")
             }
             setLoading(false)
         }).catch(err => console.log(err))
@@ -55,13 +61,13 @@ export default function blogPage(props){
         <Header />
         <br /> 
         <div className="d-flex justify-content-center">
-            <div>
+            <div style={{marginLeft:"30px"}}>
                 <p className="text-muted">
                     Published {publishedDate.toLocaleString("en-us",{month:"long"})} {publishedDate.getDate()}, {publishedDate.getFullYear()} as a <a href="">{genre} Post</a> 
                     {/* Above we used .toLocaleString insteaad of .getMonth to get full-month-name instead of just number */}
                     {/* ex: we get Febraury instead of number "2" and we get "Feb" if we set month-option above to "short" instead of "long" */}
                 </p>
-                <h2 style={{maxWidth:"850px"}} 
+                <h2 style={{maxWidth:"850px",fontSize:isMobileorTablet ? "1.99rem" : "3.5rem"}} 
                 className="display-4 text-left mb-2 blogPageTitle">
                     {title}
                 </h2>
@@ -74,19 +80,19 @@ export default function blogPage(props){
                 </p>
             </div>
         </div>  
-        <div className="mb-3 mt-5" style={{marginLeft:"150px",marginRight:"150px"}}>
+        <div className="mb-3 mt-5" style={{marginLeft:isMobileorTablet ? "30px" :"150px",marginRight:isMobileorTablet ? "30px" :"150px"}}>
             <img decoding="async" src={`/${imageFileName}`} className="blogPostImage" />
         </div>
         {/* below we will have 2 sections and the middle will take more space */}
-        <div className="mx-2 blogPage mt-5 d-flex h-100">
-            <div style={{flex:0.5}}></div>
+        <div className="mx-2 blogPage mt-5 d-flex h-100 flex-wrap">
+            {!isMobileorTablet && <div style={{flex:0.5}}></div>}
             <div className="blogPostContent ml-4 mr-4" 
             dangerouslySetInnerHTML={{__html:content}} 
             // so that our html-string for the blog-content gets passed as actual HTML
             style={{flex:2.8}}>
             </div>
             <div className="" style={{flex:1.2}}>
-                <div className="ml-5 mt-5">
+                <div className="mt-5">
                     <RecommendedPosts posts={sampleBlogs} />
                 </div>
             </div>

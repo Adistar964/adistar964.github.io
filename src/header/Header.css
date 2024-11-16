@@ -71,3 +71,7 @@
     z-index: 2;
     transition: all .3s ease;
   }
+
+  .btn-theme {
+    background-color: orangered;
+  }
