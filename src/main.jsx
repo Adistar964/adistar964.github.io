@@ -25,11 +25,21 @@ const myRouter = createHashRouter([
   {path:"/blogs", element: <BlogListPage />},
   {path:"/blogs/:blogID", element: <BlogPage />},
   {path:"/projects/:projectsCategory", element: <ProjectsPage />},
-])
+], { // this object is added to ignore few warnings
+  future: {
+    v7_fetcherPersist: true,
+    v7_normalizeFormMethod: true,
+    v7_partialHydration: true,
+    v7_relativeSplatPath: true,
+    v7_skipActionErrorRevalidation: true,
+    v7_startTransition: true,
+    }
+})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <RouterProvider router={myRouter} />
+      <RouterProvider router={myRouter} 
+      future={{v7_startTransition:true}}/> {/* this future param was added to ignore few warnings */}
       <ToastContainer /> {/* This is needed for react-toastify to work */}
   </StrictMode>,
 )

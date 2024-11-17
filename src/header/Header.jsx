@@ -45,6 +45,7 @@ export default function Header () {
           Blogs
         </span>
       </div>
+      {!isMobileorTablet&&
       <div className="group relative px-4 cursor-pointer" onClick={()=>window.location.href="#footer"}>
         <div className="flex h-10 w-10 items-center justify-center rounded-full hover:text-blue-500"> 
             <IoLinkOutline size={24} />
@@ -52,11 +53,11 @@ export default function Header () {
         <span className="absolute -top-8 left-[50%] -translate-y-[-180%] z-20 origin-left scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
           Links
         </span>
-      </div>
+      </div>}
       {isMobileorTablet ? 
           <div className="align-self-center ml-auto mr-2">
-            <a href="/usable cv.pdf" target="_blank" className="btn btn-sm btn-danger rounded-4 rounded-pill btn-theme py-1 h-auto">
-                Get CV
+            <a href="/usable cv.pdf" target="_blank" className="btn btn-sm btn-danger rounded-4 rounded-5 btn-theme h-auto p-2">
+                Download CV
             </a>
           </div>
       :<div className="CVButton ml-auto">
