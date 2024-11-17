@@ -41,12 +41,12 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://abdullah.is-a.dev/#/projects/Mobile%20&%20Desktop</loc>
+        <loc>https://abdullah.is-a.dev/#/projects/Mobile%20&amp;%20Desktop</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://abdullah.is-a.dev/#/projects/AI%20&%20Data</loc>
+        <loc>https://abdullah.is-a.dev/#/projects/AI%20&amp;%20Data</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
