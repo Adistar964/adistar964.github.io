@@ -38,7 +38,7 @@ export default function LinksPage(){
         </div>
         <div className="social-btn flex-center" onClick={()=>window.open("mailto:adistar964@gmail.com")}>
             <IoIosMail size={25} color  ="green" />
-            <span>adistar964@gmail.com</span>
+            <span>abdullah@abdullahamaan.com</span>
         </div>
     </div>
 </div>
