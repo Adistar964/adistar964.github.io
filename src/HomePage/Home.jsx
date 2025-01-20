@@ -53,8 +53,7 @@ export default function HomePage (){
                     <TypeAnimation sequence={[
                         "Hello!",800,
                         "This is Abdullah!",800,
-                        "I am a University Student!",800,
-                        "I am a Software Programmer!",800,
+                        "I am a Software Developer!",800,
                     ]} 
                     repeat={Infinity}
                     />
