@@ -36,7 +36,7 @@ export default function LinksPage(){
             <FaYoutube size={24} color="#FF0000" />
             <span>@adistar964</span>
         </div>
-        <div className="social-btn flex-center" onClick={()=>window.open("mailto:adistar964@gmail.com")}>
+        <div className="social-btn flex-center" onClick={()=>window.open("mailto:abdullah@abdullahamaan.com")}>
             <IoIosMail size={25} color  ="green" />
             <span>abdullah@abdullahamaan.com</span>
         </div>

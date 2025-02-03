@@ -56,12 +56,12 @@ export default function Header () {
       </div>}
       {isMobileorTablet ? 
           <div className="align-self-center ml-auto mr-2">
-            <a href="/usable cv.pdf" target="_blank" className="btn btn-sm btn-danger rounded-4 rounded-5 btn-theme h-auto p-2">
+            <a href="/cv.pdf" target="_blank" className="btn btn-sm btn-danger rounded-4 rounded-5 btn-theme h-auto p-2">
                 Download CV
             </a>
           </div>
       :<div className="CVButton ml-auto">
-          <a href="/usable cv.pdf" target="_blank" className="anchor">
+          <a href="/cv.pdf" target="_blank" className="anchor">
               <span>Download CV</span>
           </a>
       </div>}
