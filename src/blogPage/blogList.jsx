@@ -121,6 +121,15 @@ return (
 
 function BlogCard(props){
     const navigate = useNavigate()
+
+    // Now, we will get the introductory sentence and then show it up here
+    const htmlString = props.content;
+    // Parse the string into an HTML Document
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    // Extract the content of the <p> tag with the given ID
+    const introText = doc.querySelector("#introBlogPostText")?.textContent;
+    
     return (
     <div className="card mx-auto my-4" style={{maxWidth:"795px"}}>
         <img decoding="async" src={`/${props.imageFileName}`} width={795} height={400} 
@@ -129,7 +138,7 @@ function BlogCard(props){
             <p className="text-muted">{props.genre}</p>
             <h5 className="card-title blogPageTitle" style={{fontSize:"30px"}}>{props.title}</h5>
             <p className="card-text">
-                Notion began without a data catalog. Our data grew organically and chaotically, stored mostly in unstructured formats like JSON. This approach was supported by tools like Amplitude, which facilitated rapid data integration and analysis without the need for strict data management practices. We prioritized speed in order to accommodate a diverse audience, from developers to data scientists to product managers.
+                {introText}
             </p>
             <br />
             <hr />
